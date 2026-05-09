@@ -1,13 +1,13 @@
-$primary-color: #d17225; // 444 fff, eece1a b, w, y cc8a33 ca5b28
-$secondary-color: #eece1a; //eece1a 1194d1 3ce212
+$primary-color: #808080; //#d17225 444 fff, eece1a b, w, y cc8a33 ca5b28
+$secondary-color: #fae209; //#eece1a eece1a 1194d1 3ce212
 $show-home-image: true;
-$home-image: url(../img/background2.jpg); 
+$home-image: url(../img/csbackground3.jpg); 
 //about image
 $show-about-image: true;
-$about-image: url(../img/landscape3.jpg);
+$about-image: url(../img/csbackground2.jpg);
 // work image
 $show-work-image: true;
-$work-image: url(../img/landscape4.png);
+$work-image: url(../img/csbackground3.jpg);
 
 $background-opacity: 0.9;
 
@@ -30,14 +30,16 @@ $background-opacity: 0.9;
                 width: 100%;
                 height: 100%;
                 z-index: -1;
-                opacity: 60%; //opacity for the cover
+                opacity: 40%; //opacity for the cover
                 background: rgba($primary-color, $background-opacity);
             }
         }
     }
     @if $show-about-image {
         &#AbtBg-img {
-            position: relative;
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
 
             &:after {
                 content: '';
@@ -47,18 +49,18 @@ $background-opacity: 0.9;
                 width: 100%;
                 height: 100%;
                 z-index: -1;
-                opacity: 60%; //opacity for the cover
+                opacity: 40%; //opacity for the cover
                 background: rgba($primary-color, $background-opacity);
                 //function to switch images
-                animation: changeImage 20s infinite;
+                //animation: changeImage 20s infinite;
             }
             
-            @keyframes changeImage {
-                0% { background-position: left; background-image: url('../img/background2.jpg');}
-                33% { background-position: left; background-image: url('../img/landscape3.jpg');}
-                66% { background-position: left; background-image: url('../img/landscape4.png');}
+            /*@keyframes changeImage {
+                0% { background-position: left; background-image: url('../img/csbackground3.jpg');}
+                33% { background-position: left; background-image: url('../img/csbackground2.jpg');}
+                66% { background-position: left; background-image: url('../img/csbackground3.png');}
                 100% { background-position: left; background-image: url('../img/background2.jpg');}
-            }
+            }*/
         }
     }
     @if $show-work-image {
@@ -75,7 +77,7 @@ $background-opacity: 0.9;
                 width: 100%;
                 height: 100%;
                 z-index: -1;
-                opacity: 60%; //opacity for the cover
+                opacity: 40%; //opacity for the cover
                 background: rgba($primary-color, $background-opacity);
             }
         }
